@@ -13,13 +13,13 @@
     {
       id: 1,
       type: 'image',
-      image: 'assets/image1.png',
+      image: 'image1.png',
       caption: 'Neon dreams swirling with digital lust and colourful chaos.',
     },
     {
       id: 2,
       type: 'article',
-      image: 'assets/image2.png',
+      image: 'image2.png',
       title: '5 Reasons Neon Is the New Black',
       teaser: 'Discover why this hot hue is taking over your midnight fantasies.',
       link: 'https://example.com/5-reasons-neon',
@@ -34,7 +34,7 @@
     {
       id: 4,
       type: 'profile',
-      image: 'assets/profile.png',
+      image: 'profile.png',
       name: 'Nova',
       age: 23,
       bio: 'A neon muse with a penchant for late‑night coding and cosmic dancing.',
@@ -42,7 +42,7 @@
     {
       id: 5,
       type: 'article',
-      image: 'assets/image3.png',
+      image: 'image3.png',
       title: 'Inside the AI Art Underground',
       teaser: 'Peek into the subversive world of AI‑generated visuals that will have you questioning reality.',
       link: 'https://example.com/ai-art-underground',
@@ -50,7 +50,7 @@
     {
       id: 6,
       type: 'image',
-      image: 'assets/image2.png',
+      image: 'image2.png',
       caption: 'Just a glitch? Or the start of something wild and unexpected…',
     },
   ];
