@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nood Drop</title>
+    <!-- Link the external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main application container -->
+    <div id="app">
+      <!-- Home/Swipe deck view -->
+      <div id="deckPage" class="page">
+        <div id="cardContainer" class="card-container"></div>
+        <div class="controls">
+          <button id="skipBtn" class="control-btn skip">❌ Skip</button>
+          <button id="saveBtn" class="control-btn save">❤️ Save</button>
+        </div>
+      </div>
+
+      <!-- Saved cards view -->
+      <div id="savedPage" class="page">
+        <h1 class="page-title">Your Saved Drops</h1>
+        <div id="savedList" class="saved-list"></div>
+      </div>
+
+      <!-- Settings / About page -->
+      <div id="settingsPage" class="page">
+        <h1 class="page-title">About Nood Drop</h1>
+        <div class="settings-content">
+          <p>
+            Nood Drop is a swipe‑based, mobile‑first playground of AI‑generated art,
+            characters and chaos. There’s no login, no ads and no algorithm.
+            Swipe, laugh, save and come back later – your cards live in your
+            browser.
+          </p>
+          <button id="clearSavedBtn" class="danger">🗑️ Clear Saved Cards</button>
+          <p class="donate">
+            Like the vibe? Support the project on
+            <a href="https://ko-fi.com" target="_blank">Ko‑fi</a> or
+            <a href="https://gumroad.com" target="_blank">Gumroad</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky bottom navigation -->
+    <nav id="bottomNav" class="bottom-nav">
+      <a href="#" id="navHome" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">Home</span>
+      </a>
+      <a href="#saved" id="navSaved" class="nav-item">
+        <span class="nav-icon">❤️</span>
+        <span class="nav-label">Saved</span>
+      </a>
+      <a href="#settings" id="navSettings" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">Settings</span>
+      </a>
+    </nav>
+
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>

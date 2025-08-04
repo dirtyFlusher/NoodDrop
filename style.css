@@ -1,0 +1,322 @@
+/*
+ * Nood Drop – dark neon vibes
+ *
+ * This stylesheet defines the core look and feel of the Nood Drop
+ * experience. A dark background and a hot pink accent set the tone,
+ * while generous padding, rounded corners and bold typography make
+ * the content feel playful and inviting on mobile devices.
+ */
+
+/* CSS variables for easy theme tweaks */
+:root {
+  --bg-color: #0e0e11; /* very dark background */
+  --card-bg: #1e1e28; /* card background */
+  --accent: #ff007a; /* primary accent (hot pink) */
+  --text-light: #f5f5f7; /* primary text colour */
+  --text-dim: #a0a0b0; /* secondary text colour */
+  --danger: #ff5566; /* danger/delete buttons */
+  --border-radius: 12px;
+  --nav-height: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overscroll-behavior-y: none;
+}
+
+/* Main application area */
+#app {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: var(--nav-height);
+}
+
+/* Hide pages by default, show when active */
+.page {
+  display: none;
+  padding: 1rem;
+}
+
+.page.active {
+  display: block;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* Card container and card styling */
+.card-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: calc(100vh - 200px);
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 0.8rem 1rem;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.card-caption, .card-teaser, .card-bio {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+/* Poll styling */
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.poll-option {
+  background-color: var(--card-bg);
+  color: var(--text-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.poll-option:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.poll-results {
+  margin-top: 0.5rem;
+}
+
+.poll-bar {
+  position: relative;
+  background-color: #2c2c3a;
+  border-radius: var(--border-radius);
+  height: 22px;
+  margin-bottom: 0.5rem;
+}
+
+.poll-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: var(--border-radius);
+}
+
+.poll-bar-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+/* Control buttons below the card */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.control-btn {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-btn.skip {
+  background-color: #38384c;
+  color: var(--text-light);
+}
+
+.control-btn.save {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.control-btn.skip:hover {
+  background-color: #4b4b62;
+}
+
+.control-btn.save:hover {
+  background-color: #ff338f;
+}
+
+/* Saved list styling */
+.saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.saved-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-card .remove-btn {
+  background-color: var(--danger);
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  align-self: flex-end;
+  margin: 0.5rem;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.saved-card .remove-btn:hover {
+  background-color: #ff4455;
+}
+
+/* Settings / About styling */
+.settings-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.settings-content p {
+  margin: 0.75rem 0;
+}
+
+.settings-content .danger {
+  background-color: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.settings-content .danger:hover {
+  background-color: #ff4455;
+}
+
+.settings-content .donate a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.settings-content .donate a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom navigation bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #2c2c3a;
+  z-index: 10;
+}
+
+.nav-item {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.nav-item.active {
+  color: var(--accent);
+}
+
+.nav-icon {
+  font-size: 1.4rem;
+}
+
+/* Media query for larger screens */
+@media (min-width: 600px) {
+  .card-container {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .saved-list {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
